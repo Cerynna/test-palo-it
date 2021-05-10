@@ -5,11 +5,12 @@
   "license": "MIT",
   "scripts": {
     "start:app": "cd frontend && yarn start",
-    "start:back": "cd back & nodemon server.js",
+    "start:back": "cd backend && nodemon server.js",
     "install": "sh scripts/install.sh",
     "dev": "concurrently -n back,front \"yarn start:back\" \"yarn start:app\"",
-    "start": "cd back & node server.js",
-    "build": "cd frontend && yarn build"
+    "start": "cd backend & node server.js",
+    "build": "cd frontend && yarn build",
+    "seeder": "cd backend && yarn seeder"
   },
   "dependencies": {
     "dotenv": "^9.0.1"
