@@ -1,7 +1,39 @@
-$mainColor: rgba(0, 0, 0, 1);
-$secondColor: rgba(255, 255, 255, 1);
+@import "reset";
+$mainColor: #63cd9a;
+$secondColor: #ef8035;
+// #63CD9A
+// #72E26A
+// #F6AE39
+// #EF8035
+// #706F6B
 
 body {
-  background: $mainColor;
+  background: linear-gradient(to right, $mainColor, $secondColor);
+  height: 100vh;
+  width: 100vw;
   color: $secondColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @import "App";
+}
+input {
+  padding: 5px 10px;
+  outline: none;
+  border: 2px solid $secondColor;
+  border-radius: 5px 0 0 5px;
+}
+button {
+  background: #fff;
+  padding: 5px 10px;
+  outline: none;
+  border: 2px solid $secondColor;
+  cursor: pointer;
+  transition: background 200ms ease-in-out;
+  border-radius: 0 5px 5px 0;
+  &:hover {
+    background: $secondColor;
+    color: #fff;
+  }
 }
