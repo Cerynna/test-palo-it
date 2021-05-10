@@ -6,9 +6,7 @@ import Tags from "./components/Tags";
 
 function App() {
   const [tags, setTags] = useState(false);
-  axios.get("/test").then(({ data }) => {
-    console.log(data);
-  });
+
   return (
     <div className="App">
       <Input setTags={setTags} />
