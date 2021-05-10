@@ -1,0 +1,52 @@
+.App {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 10px;
+  .input {
+    input {
+      border-right: 0px;
+    }
+  }
+  .tags {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .tag {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      background: $secondColor;
+      color: #fff;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 2px;
+      .text {
+        padding: 0 5px;
+      }
+      .delete {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #fff;
+        text-align: center;
+        line-height: 22px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:before {
+          content: "✕";
+        }
+        &:hover {
+          color: $secondColor;
+          background: #fff;
+        }
+      }
+    }
+  }
+}
