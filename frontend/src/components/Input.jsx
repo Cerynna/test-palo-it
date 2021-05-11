@@ -15,12 +15,7 @@ function Input({ setTags, defCity }) {
   return (
     <div className="input">
       <label htmlFor="search">
-        <input
-          type="text"
-          name="search"
-          ref={input}
-          defaultValue="arbre lyon toulouse maison"
-        />
+        <input type="text" name="search" ref={input} />
         <button onClick={handle}>OK</button>
       </label>
     </div>

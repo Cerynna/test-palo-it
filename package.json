@@ -11,8 +11,5 @@
     "start": "cd backend & node server.js",
     "build": "cd frontend && yarn build",
     "seeder": "cd backend && yarn seeder"
-  },
-  "dependencies": {
-    "dotenv": "^9.0.1"
   }
 }

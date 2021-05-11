@@ -22,7 +22,7 @@ function App() {
         });
       }
     }
-  }, [products]);
+  }, [products, tags]);
   function FindTags() {
     if (tags) {
       axios.get(`/product/${tags.join(",")}`).then(({ data }) => {
