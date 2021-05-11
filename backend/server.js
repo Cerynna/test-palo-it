@@ -6,7 +6,6 @@ const app = express();
 const port = 4000;
 require("dotenv").config();
 
-const Product = require("./model/Product");
 var routeProduct = require("./routes/product");
 
 app.use(cors());
