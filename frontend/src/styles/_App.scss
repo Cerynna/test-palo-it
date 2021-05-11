@@ -2,22 +2,41 @@
   background: #fff;
   padding: 10px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "input input"
+    "tags search"
+    "result result";
+  grid-template-rows: 35px 1fr;
+  grid-template-columns: 1fr 80px;
+  //   flex-direction: column;
+  //   justify-content: flex-start;
+  //   align-items: center;
   row-gap: 10px;
   .input {
+    grid-area: input;
+    vertical-align: middle;
     input {
+      width: calc(100% - 20px - 50px);
       border-right: 0px;
+      border-radius: 5px 0 0 5px;
+    }
+    button {
+      border-radius: 0 5px 5px 0;
     }
   }
+  .search {
+    grid-area: search;
+    text-align: right;
+  }
   .tags {
-    width: 100%;
+    grid-area: tags;
+    max-width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     .tag {
       display: flex;
       flex-direction: row;
@@ -46,6 +65,39 @@
           color: $secondColor;
           background: #fff;
         }
+      }
+    }
+  }
+  .listProduct {
+    grid-area: result;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid $secondColor;
+    border-radius: 5px;
+    direction: rtl;
+    .product {
+      direction: ltr;
+      padding: 2px 10px;
+      min-width: 340px;
+      display: grid;
+      grid-template-areas: "id name city price";
+      grid-template-columns: 100px 120px 80px 30px;
+      column-gap: 5px;
+      &:nth-child(even) {
+        background: rgba($secondColor, 0.3);
+      }
+      .price {
+        text-align: center;
+      }
+      &.header {
+        background: $secondColor;
+        color: #fff;
+        padding: 10px;
+        font-weight: 700;
       }
     }
   }
