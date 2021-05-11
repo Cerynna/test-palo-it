@@ -6,12 +6,10 @@
   grid-template-areas:
     "input input"
     "tags search"
-    "result result";
+    "result result"
+    "blank add";
   grid-template-rows: 35px 1fr;
   grid-template-columns: 1fr 80px;
-  //   flex-direction: column;
-  //   justify-content: flex-start;
-  //   align-items: center;
   row-gap: 10px;
   .input {
     grid-area: input;
@@ -73,10 +71,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     max-height: 300px;
     overflow-y: scroll;
-    border: 1px solid $secondColor;
+    border: 2px solid $secondColor;
     border-radius: 5px;
     direction: rtl;
     .product {
@@ -84,20 +82,140 @@
       padding: 2px 10px;
       min-width: 340px;
       display: grid;
-      grid-template-areas: "id name city price";
-      grid-template-columns: 100px 120px 80px 30px;
+      grid-template-areas: "id name city price buttons";
+      grid-template-columns: 100px 120px 80px 40px 60px;
+      align-items: center;
       column-gap: 5px;
+      position: relative;
       &:nth-child(even) {
         background: rgba($secondColor, 0.3);
       }
-      .price {
+      .errorDiv {
+        position: absolute;
+        border-radius: 5px;
+        background: rgba(255, 0, 0, 0.8);
+        border: 2px solid red;
+        padding: 5px 10px;
+        color: #fff;
+        font-weight: 700;
+        top: -35px;
+        left: 0;
+        transform: scaleY(1);
+        transition: all 200ms ease-in-out;
+        width: 90%;
         text-align: center;
+        &.close {
+          transform: scaleY(0);
+        }
+      }
+      input {
+        border-radius: 5px;
+        padding: 2px 10px;
+      }
+      .all {
+        text-align: center;
+        font-weight: 700;
+        grid-column-start: id;
+        grid-column-end: price;
+      }
+      .id {
+        grid-area: id;
+        input {
+          width: 80px;
+        }
+      }
+      .name {
+        grid-area: name;
+        input {
+          width: 100px;
+        }
+      }
+      .city {
+        grid-area: city;
+        input {
+          width: 60px;
+        }
+      }
+      .price {
+        grid-area: price;
+        text-align: center;
+        input {
+          text-align: center;
+          width: 20px;
+        }
+      }
+      .buttons {
+        grid-area: buttons;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
       }
       &.header {
         background: $secondColor;
         color: #fff;
         padding: 10px;
         font-weight: 700;
+      }
+    }
+  }
+  .addProduct {
+    grid-area: add;
+    display: flex;
+    justify-content: flex-end;
+    .popover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background 600ms ease-in-out, transform 400ms ease-in-out;
+      transform-origin: center center;
+      &.close {
+        background: rgba(0, 0, 0, 0);
+        transform: scaleX(0);
+        .form {
+          display: none;
+        }
+      }
+      &.open {
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+      }
+    }
+    .form {
+      background: #fff;
+      //   padding: 10px;
+      border-radius: 6px 6px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      .title {
+        padding: 10px;
+        background: $secondColor;
+        color: #fff;
+        font-size: 1.2em;
+        border-radius: 5px 5px 0 0;
+      }
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      label {
+        margin: 0 10px;
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+      }
+      input {
+        margin: 0 10px;
       }
     }
   }

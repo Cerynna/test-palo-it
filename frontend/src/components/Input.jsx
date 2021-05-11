@@ -1,7 +1,6 @@
 import { useRef } from "react";
-const defCity = ["lyon", "paris", "marseille", "toulouse", "lille", "bordeaux"];
 
-function Input({setTags}) {
+function Input({ setTags, defCity }) {
   const input = useRef(false);
   function handle() {
     let tags = defCity.filter((tag) => {

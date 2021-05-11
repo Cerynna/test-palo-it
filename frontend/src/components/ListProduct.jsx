@@ -1,6 +1,6 @@
 import Product from "./Product";
 
-function ListProduct({ products }) {
+function ListProduct({ products, removeProduct, editProduct }) {
   return (
     <div className="listProduct">
       <div className="product header">
@@ -8,10 +8,18 @@ function ListProduct({ products }) {
         <div className="name">Nom Produit</div>
         <div className="city">Ville</div>
         <div className="price">Prix</div>
+        <div className="buttons"></div>
       </div>
       {products ? (
         products.map((product) => {
-          return <Product product={product} />;
+          return (
+            <Product
+              product={product}
+              key={product.id}
+              removeProduct={removeProduct}
+              editProduct={editProduct}
+            />
+          );
         })
       ) : (
         <></>
