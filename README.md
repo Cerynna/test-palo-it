@@ -10,7 +10,7 @@ Projet test pour Palo-IT
 
 ### Installation
 
-Executez la commande ``yarn install`` ou ``npm run install`` pour installer les `node_modules`.
+Executez la commande ``yarn install`` ou ``npm run install`` pour installer les `node_modules` et les seeders.
 
 Puis executez la command ``yarn dev`` ou ``npm run dev`` pour executé l'application en Dévellopement.
 
