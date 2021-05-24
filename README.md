@@ -41,8 +41,6 @@ Ou executez la command `yarn start` ou `npm run start` pour executé l'applicati
 
 La command `yarn build` ou `npm run build` permet de build l'app pour la version Production.
 
-La command `yarn build` ou `npm run build` permet de build l'app pour la version Production.
-
 
 ## Auteurs
 
