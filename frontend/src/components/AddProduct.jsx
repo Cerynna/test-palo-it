@@ -1,13 +1,14 @@
 import { useState, useRef } from "react";
 
-
 function AddProduct({ CreateProduct }) {
+  // State de la modal pour add un produit.
   const [open, setOpen] = useState(false);
   const id = useRef(false);
   const name = useRef(false);
   const city = useRef(false);
   const price = useRef(false);
 
+  // Vider les inputs
   function Cancel() {
     id.current.value = "";
     name.current.value = "";
@@ -15,6 +16,7 @@ function AddProduct({ CreateProduct }) {
     price.current.value = "";
     setOpen(false);
   }
+  // Envoyer le formulaire
   function Valid() {
     CreateProduct(id, name, city, price, Cancel);
   }

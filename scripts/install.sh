@@ -1,4 +1,5 @@
 #!/bin/bash
+
 backend="$(pwd)/backend";
 frontend="$(pwd)/frontend";
 

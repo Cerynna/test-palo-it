@@ -1,6 +1,7 @@
 import Tag from "./Tag";
 
 function Tags({ tags, setTags }) {
+  // Remove un tag dans la liste de tags
   function removeTag(tag) {
     let newFlags = tags.filter((t) => {
       return t !== tag;

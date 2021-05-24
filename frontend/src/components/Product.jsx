@@ -1,13 +1,16 @@
 import { useState, useRef } from "react";
 
 function Product({ product, removeProduct, editProduct }) {
+  // State de l'edit du produit
   const [edit, setEdit] = useState(false);
+  // State Confirmation Remove
   const [remove, setRemove] = useState(false);
   const name = useRef(false);
   const city = useRef(false);
   const price = useRef(false);
   const errorDiv = useRef(false);
 
+  // Annulé l'opétation courante.
   function Cancel() {
     if (errorDiv.current) errorDiv.current.classList.add("close");
     if (name.current) name.current.classList.remove("error");
@@ -16,17 +19,21 @@ function Product({ product, removeProduct, editProduct }) {
     setEdit(false);
     setRemove(false);
   }
-
+  // Toggle l'edit mode
   function editToggle() {
     setEdit(!edit);
   }
+  // Toggle confirmation delete
   function removeToggle() {
     setRemove(!remove);
   }
+  // Remove Product
   function validRemove() {
     removeProduct(product);
   }
+  // Edit PRoduct
   function validEdit() {
+    // Recupération des erreur possible.
     let { error, target } = editProduct(
       product,
       name.current.value,
@@ -34,10 +41,10 @@ function Product({ product, removeProduct, editProduct }) {
       price.current.value,
       Cancel
     );
+    // Animation d'erreur
     if (error) {
       errorDiv.current.innerText = error;
       errorDiv.current.classList.remove("close");
-
       switch (target) {
         default:
         case "all":
