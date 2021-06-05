@@ -8,7 +8,7 @@ Projet test pour Palo-IT
 
 ## Explication
 
-Au niveau de l'architecture j'ai pris pour abitude de séparé le frontend et le backend dans deux dossiers séparé.
+Au niveau de l'architecture j'ai pris pour habitude de séparé le frontend et le backend dans deux dossiers séparé.
 J'ai une command sur ma machine qui me permet de crée un nouveau projet NodeJS / React déjà pret et configuré avec mes préférence. (J'ai ajouter un copie du script dans le dossiers scripts).
 J'ai donc commencer l'exercice 1 avec cette architecture.
 
